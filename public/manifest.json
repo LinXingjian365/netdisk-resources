@@ -1,0 +1,18 @@
+{
+  "name": "网络资源教程库",
+  "short_name": "资源库",
+  "description": "培鑫盈资源教程分享系统 - 网络资源教程库",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#667eea",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

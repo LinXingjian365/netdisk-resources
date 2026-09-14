@@ -1,0 +1,191 @@
+/* ============================================
+   全局样式 — 浅色主题
+   ============================================ */
+
+:root {
+  --brand-500: #3b82f6;
+  --brand-600: #2563eb;
+  --brand-50: #eff6ff;
+
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+
+  --text-1: #1f2937;
+  --text-2: #4b5563;
+  --text-3: #9ca3af;
+
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
+
+  --danger: #ef4444;
+  --success: #10b981;
+  --warning: #f59e0b;
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow: 0 4px 16px rgba(16, 24, 40, 0.08);
+  --shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.12);
+
+  --header-h: 64px;
+  --container: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text-1);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- 布局 ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.app-main {
+  min-height: calc(100vh - var(--header-h) - 200px);
+  padding: 28px 0 60px;
+}
+
+/* ---------- 卡片 ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+}
+
+/* ---------- 标题 ---------- */
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: var(--text-1);
+}
+
+.muted {
+  color: var(--text-3);
+}
+
+/* ---------- 渐变文本 ---------- */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- 动画 ---------- */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.18s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* ---------- 无障碍：键盘焦点 ---------- */
+:focus-visible {
+  outline: 2px solid var(--brand-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* 高对比度模式 */
+html.high-contrast {
+  --text-1: #000;
+  --text-2: #111;
+  --text-3: #333;
+  --bg: #fff;
+  --border: #000;
+  --surface: #fff;
+}
+
+html.high-contrast .card {
+  border-width: 2px;
+}
+
+/* 大字号模式 */
+html.large-text {
+  font-size: 18px;
+}
+
+/* 尊重系统减少动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 14px;
+  }
+  .app-main {
+    padding: 18px 0 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 18px;
+  }
+}
+
+/* ---------- 滚动条 ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
