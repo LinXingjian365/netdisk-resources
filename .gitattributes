@@ -1,0 +1,16 @@
+# 默认按 LF 归一化，避免 Windows 下 CRLF 造成全文件 diff 噪声
+* text=auto eol=lf
+
+# 二进制文件不做行尾转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.zip binary
+
+# 锁文件不做 diff 展示
+package-lock.json -diff linguist-generated
